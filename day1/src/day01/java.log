@@ -1,0 +1,104 @@
+7. java 基础
+    java历史：
+        java 之父：詹姆斯.高斯林(James Gosling) 1977加拿大卡尔加里大学1983美国卡内基梅隆大学计算机博士学位IBM工作设计第一代工作站NeWS系统
+        Oak->java 1.5Tiger(老虎) 1.6 Mustang（野马） 1.7 Dolphin（海豚）
+    java语言的平台版本
+        J2SE标准版：普通桌面商务应用解决方案
+        J2ME小型版：开发电子消费产品嵌入式应用
+        J2EE企业版：一套解决方案
+        该技术体系中包含Servlet、Jsp等，主要针对与web应用程序的开发
+    JAVA语言的特点
+        简单、面向对象、开源、跨平台
+8.什么是跨平台性
+    通过JAVA语言编译的引用程序在不同 的系统平台上都可以运行
+    原理是：
+        只要在需要运行的JAVA应用程序在操作系统上，先安装一个JAVA虚拟机（JVM）即可,由JVM来负责java程序在该体系中的运行
+9.JRE和JDK的概述
+    JRE（JAVA Runtime Environment）是JAVA运行环境 （JVM +类库）
+        包括JAVA虚拟机（JVM Java Virtual Machine）和Java程序所需要的核心类库等，如果想要运行一个开发好的Java程序，计算机中只需要安装JRE
+    JDK(Java Development Kit)Java 开发工具包（JRE + JAVA开发工具）
+        JDK是给开发人员使用的，其中包含的JAVA开发工具包括了JRE，所以安装JDK，就不用再单独安装JRE了
+        其中开发工具包括javac.exe 编译工具，jar.exe打包工具等
+    简单的说：就是JDK开发完成后，在JRE运行
+10.JDK安装
+11.JDK安装目录的安装目录解析
+    bin：可执行程序 javac.exe(java编译器),java.exe（java运行工具）,javadoc.exe（文档生成工具）
+    db目录:从1.6是一个小型的数据库，用于JDBC学习的时候，不需要额外安装一个数据库软件，选择JavaDB
+    jre目录:就是Java运行环境的目录
+    include目录：由于JDK是通过C和C++实现的，因此在启动时候需要引入一些C语言的文件，该目录就是用来存放这些头文件的
+    lib目录：是library的缩写，意为Java类库或库文件,就是开发工具使用归档包文件
+    src.zip文件：是src文件夹的压缩文件，src 中放置的是JDK类的核心代码，通过该文件可以查看Java基础类的源代码
+12.Java开发工具的介绍
+    普通的文本编写器就可以编写notepad
+    Editplus
+    Eclipse
+    MyEclipse
+    IDEA
+14.HelloWorld案例的编写
+    HelloWorld传统介绍
+        class test{
+            public void static main (String[] args){
+                System.out.println("Hello World");
+            }
+        }
+    javac test.java
+
+    java test
+
+    (注意可以直接运行class 的名字可以不与文件名一直，但常见规定的class的名字和文件命保持一致)
+15.HelloWorld常见的问题
+    找不到文件、单词拼写错误
+16.Java常见的书写格式
+    大括号对齐成对写
+    左大括号前面有空格
+    遇到左大括号要Tab
+    方法和代码块之间加空行让程序看起来清晰
+    并排的语句之间加空格，例如for语句
+    运算符两侧加空格
+17.java环境变量的作用配置方式
+    作用：为了让文件不要全都堆积在jdk文件夹
+    配置方式：计算机配置，环境变量
+18.Path环境变量配置2
+    加上JAVA_HOME,%JAVA_HOME%
+19.ClassPath环境变量的作用以及配置
+    javac之后直接把当前的目录当作是classPath路径，直接把xxx.class文件生成到本地目录
+    可以配置，也可以不用，方式同样是在环境变量中配置classpath 文件目录
+    如果该目录下有xxx.class文件可以直接java 运行该类
+    配置了classpath 所有编译过的classpath都要放到该目录才能运行java
+    前面加上.:就可以防止这种情况发生.意思是当前目录
+    总结：classpath没有必要配置
+20.EditPlus开发程序并运行
+    好处：可以高亮显示 正确写是编程蓝色、红色之类
+    配置后可以直接编译，运行
+
+21.JAVA注释
+    单行注释
+    //
+    多行注释
+    /**/
+    文档注释
+    /**
+     *
+     */
+    当行注释可以嵌套
+    多行注释不能嵌套
+22. 关键字的概述和使用
+    含义是被java赋予特殊含义的单词（具体百度，和运用）
+23.标识符
+    就是给类、接口、方法、变量等起名字时使用字符序列
+    组成规则
+        英文大小写字母
+        数字字符
+        $和_
+    注意事项
+        不能以数字开头
+        不能是JAVA中的关键字
+        区分大小写
+24.标识符的常用的命名规则
+    包：包名全部小写，一般是公司域名倒着写例如：www.heima.com 包名:com.heima.包的作用
+    类和接口：驼峰命名DemoStudent
+    方法和变量：如果是一个单词每个字母都小写，如果是两个单词，第二个首字母大写
+    常量：如果是一个单词全部大写，两个单词用_分开
+
+
+
