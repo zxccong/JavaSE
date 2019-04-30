@@ -1,0 +1,22 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# idea ignore
+.idea/
+*.ipr
+*.iws
+.mymetadata
+.checkstyle
+.classpath
+.project
+.class
+.war
+.zip
+.rar
+.settings/*
+/indexes/*
+/target/*
+/src/main/webapp/WEB-INF/classes/*
+/src/main/webapp/userfiles/*
+/target/
+
+
