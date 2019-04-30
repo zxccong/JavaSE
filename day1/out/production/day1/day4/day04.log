@@ -31,5 +31,10 @@
     for(;;)
     while(true)
 
+6.break
+    语句跳出循环
+7.continue
+    跳过本次循环
+8.跳转语句
 
 
