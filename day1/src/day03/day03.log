@@ -4,3 +4,34 @@
 2.&&与&的区别
     结果一样，&&具有短路的效果
     如果左边的为false
+     Demo2_Operator
+3.位运算符的用法
+    &,|,^,~
+     Demo3_Operator
+4.位异运算符的特点和面试题
+    ^
+    一个数位移或2次，不变
+    Demo4_operator
+5.位运算符基本用法2和面试题
+    >>,>>>,<<
+    左移，无符号右移，右移
+    Demo5_Operator
+6.三目运算符和其基本应用
+    //(关系表达式)？表达式1 ：表达式2
+    Demo6_Operator
+7.键盘录入基础和联系
+    Test1_Scanner
+8.流程控制语句
+    流程控制语句：可以执行控制程序的执行流程
+    分类：顺序结构、选择结构、循环结构
+    Demo8_Sequence
+9.选择结构If
+    Demo9_if
+10.选择结构switch
+    Demo10_switch
+11.总结switch语句和if语句的各自使用场景
+    switch用于判断固定值时使用
+    if建议判断区间范围时使用
+    案例分别用switch语句和if语句是实现下列需求
+        输入月分判断季节
+        Test2_SwitchIf
