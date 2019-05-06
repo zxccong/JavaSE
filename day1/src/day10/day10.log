@@ -110,6 +110,9 @@
     Test1_NoNameInnerClass.java
 16.匿名内部类的面试题
     Test2_NoNameInnerClass.java
+17.总结面向对象
+    匿名内部类也会有.class文件
+    名字为外部类加上$1.$2以此类推
 
 
 
