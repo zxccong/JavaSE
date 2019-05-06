@@ -1,0 +1,117 @@
+1.包
+    为什么要有包
+        将字节码分类存放
+        包其实就是文件夹
+    包的概述
+        按照功能分
+            增删改查包
+        按照模块分
+            教师包
+            学生包
+2.包的注意事项
+    定义包的格式
+        package 报名
+        多级包.分开即可
+    定义包的注意事项
+        package 语句必须是程序的第一条可执行代码
+        package 语句在一个java文件中只有一个
+        如果没有package ，默认表示无包名
+3.编译和运行
+    编译时一样的
+    运行的时候要到根目录 java com.heima.Demo_Package才能运行到，
+    不能够直接到目录下面java Demo_Package因为这个已经是一个带包的类
+    编译的时候创建目录 java -d . Demo_Package.java
+4.不同包下类之间的访问
+    使用包名.类名进行访问，封装时相对而言的，别的包不能访问没有加public 的包
+5.import 关键字
+    为什么要有import
+        为了让其他包的类，对调用者可见，就不用写全类名了
+    注意事项
+        只能放在类和package 中间
+        方法一：java.util.Scanner
+        方法二：import.util.Scanner
+        import java.util.* //表示 通配符，他会在该包下挨个去匹配，匹配上导入
+        虽然可以这么写，但是不建议
+    面试题
+        package,import,class顺序关系
+        package先于import先于class
+6.四种权限修饰符
+                    本类  同一个包下的（子类无关类） 不同包下的子类  不同包（无关类）
+    private           Y
+    默认              Y         Y
+    protected         Y         Y                           Y
+    public            Y         Y                           Y               Y
+7.常见的修饰符
+    修饰符
+        权限修饰符：private， 默认的，protected , public
+        状态修饰符：static , final
+        抽象修饰符：abstract
+    类：
+        权限修饰符：默认，public
+        状态修饰符： final
+        抽象修饰符： abstract
+    成员变量：
+        权限修饰符：private， 默认的，protected , public
+        状态修饰符： static , final
+    构造方法：
+        权限修饰符：private， 默认的，protected , public
+    成员方法：
+        权限修饰符：private， 默认的，protected , public
+        状态修饰符：static , final
+        抽象修饰符：abstract
+    组合规则
+        成员变量 public static final
+        成员方法
+            public static
+            public abstract
+            public final
+8.内部类
+    概述
+        在类中定义类
+    内部类的访问特点
+        内部类可以直接访问外部类的成员，包括私有
+        外部类要访问内部内的成员必须创建对象
+        Demo1_InnerClass.java
+9.内部类私有使用 Demo1_InnerClass.java
+10.静态内部类
+11.内部类面试题
+    Test1_InnerClass.java
+12.局部内部类
+    在方法中定义内部类
+    Demo2_InnerClass.java
+    //堆栈流程分析
+    内部类中使用的外部变量需要加上final的修饰
+    总结
+        局部内部类访问局部变量必须加上final修饰
+            局部内部类在访问他所在的方法中的局部变量修饰是为什么？
+                因为当调用这个方法时，局部变量如果没有用final修饰，他的声明周期和方法一样长，
+                当方法弹栈，局部变量也会消失，那么局部内部类对象还没有马上消失，想用这个局部变量，就没有了，
+                如果用final修饰会在类加载的时候加入到常量池中，即使方法弹栈，常量池还在还可以继续使用
+
+                但是jdk1.8取消了这个事情，
+13.匿名内部类
+    就是内部类的一种简化写法
+    前提：
+        存在一个接口或者类（可以是具体的类，也可以是抽象的类）
+    格式
+        new 类名或者接口名（）{
+
+        }
+    本质
+        继承一个类，或者实现该接口的匿名对象
+    是局部内部类的一种
+    Demo1_NoNameInnerClass.java
+14.重写多个方法
+    Demo1_NoNameInnerClass.java
+    要调用多个方法，要多次创建对象
+    或者将其赋值给 Inner  i  ;父类引用指向之类对象
+    但是如果有接口外的拓展的方法，不能向下转型，没有子类类名
+15.匿名内部类在开发中的引用
+    Test1_NoNameInnerClass.java
+16.匿名内部类的面试题
+    Test2_NoNameInnerClass.java
+
+
+
+
+

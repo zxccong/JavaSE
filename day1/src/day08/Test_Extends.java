@@ -1,21 +1,23 @@
 package day08;
 
+//import day09.Son;
+
 /**
  * 继承面试题
  */
 public class Test_Extends {
     
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Son son = new Son();
         son.show();
         
 
-    }
+    }*/
 
 
 }
- class Father{
+/* class Father{
      public int num = 10;
     public Father(){
         System.out.println("fu");
@@ -34,7 +36,7 @@ public class Test_Extends {
          System.out.println("this.num = " + this.num);
          System.out.println("super.num = " + super.num);
      }
- }
+ }*/
 
  /*
  输出

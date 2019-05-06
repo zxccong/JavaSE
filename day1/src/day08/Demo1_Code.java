@@ -16,6 +16,7 @@ public class Demo1_Code {
     }
 }
 
+/*
 class  Student{
 
     //构造代码块：每构造一次对象就会执行一次，优先于构造函数执行
@@ -27,4 +28,4 @@ class  Student{
     static {
 
     }
-}
+}*/
