@@ -1,0 +1,210 @@
+1.Scanner
+    Scanner概述
+        一个可以使用正则表达式来解析基本类型和字符串的简单文本扫描器
+    B:Scanner的构造方法原理
+    	* Scanner(InputStream source)
+    	* System类下有一个静态的字段：
+    		* public static final InputStream in; 标准的输入流，对应着键盘录入。
+        InputMismatchException输入不同类型，标记类型和期望类型不匹配
+    * C:一般方法
+    	* hasNextXxx()  判断是否还有下一个输入项,其中Xxx可以是Int,Double等。如果需要判断是否包含下一个字符串，则可以省略Xxx
+    	* nextXxx()  获取下一个输入项。Xxx的含义和上个方法中的Xxx相同,默认情况下，Scanner使用空格，回车等作为分隔符
+
+2.获取数据的小问题和解决方案
+    Demo_Scanner 29-43
+3.String
+    * 可以看到这样的两句话。
+    		* a:字符串字面值"abc"也可以看成是一个字符串对象。
+    		* b:字符串是常量，一旦被赋值，就不能被改变。
+    Demo_String
+4.String类的构造方法
+    * A:常见构造方法
+    	* public String():空构造
+    	* public String(byte[] bytes):把字节数组转成字符串
+    	* public String(byte[] bytes,int index,int length):把字节数组的一部分转成字符串
+    	* public String(char[] value):把字符数组转成字符串
+    	* public String(char[] value,int index,int count):把字符数组的一部分转成字符串
+    	* public String(String original):把字符串常量值转成字符串
+    * B:案例演示
+    	* 演示String类的常见构造方法
+    Demo_String 18-40
+5.String 面试题
+    * 1.判断定义为String类型的s1和s2是否相等
+    	* String s1 = "abc";
+    	* String s2 = "abc";
+    	* System.out.println(s1 == s2); 	false不同 地址不同(答案：true)
+    	* System.out.println(s1.equals(s2));    true
+    解析：
+        答案两个都时true 因为在第一个“abc”的时候已经创建在了常量池中，创建第二个的时候发现常量池有，就直接指向那个地址
+
+    * 2.下面这句话在内存中创建了几个对象?
+    	* String s1 = new String("abc");
+    解析
+        创建常量池“abc",String()进栈，new String在堆创建内存 ，让常量池的副本复制到堆内存中
+        String
+        public String(String original)初始化一个新创建的 String 对象，使其表示一个与参数相同的字符序列；
+        换句话说，新创建的字符串是该参数字符串的副本。
+        由于 String 是不可变的，所以无需使用此构造方法，
+        除非需要 original 的显式副本。
+        答案2个
+
+
+    * 3.判断定义为String类型的s1和s2是否相等
+    	* String s1 = new String("abc");
+    	* String s2 = "abc";
+    	* System.out.println(s1 == s2);
+    	* System.out.println(s1.equals(s2));
+    解析：
+        第一个时false:s1是在堆内存中的一个常量池的副本记录堆内存地址值，s2是在常量池的地址值，所以不相等
+        第二个true :APi显示String 重写了equals方法会比较字符值
+
+
+    * 4.判断定义为String类型的s1和s2是否相等
+    	* String s1 = "a" + "b" + "c";
+    	* String s2 = "abc";
+    	* System.out.println(s1 == s2);
+    	* System.out.println(s1.equals(s2));
+    解析
+        两个都是true
+        java 中有常量优化机制 byte b = 3 +4;举例说明编译时有常量优化机制
+
+    * 5.判断定义为String类型的s1和s2是否相等
+    	* String s1 = "ab";
+    	* String s2 = "abc";
+    	* String s3 = s1 + "c";
+    	* System.out.println(s3 == s2);
+    	* System.out.println(s3.equals(s2));
+    解析
+        第一个是false
+        API:
+        Java 语言提供对字符串串联符号（"+"）以及将其他对象转换为字符串的特殊支持。
+        字符串串联是通过 StringBuilder（或 StringBuffer）类及其 append 方法实现的。
+        字符串转换是通过 toString 方法实现的，该方法由 Object 类定义，并可被 Java 中的所有类继承。
+        有关字符串串联和转换的更多信息，请参阅 Gosling、Joy 和 Steele 合著的 The Java Language Specification
+
+        String s3 = s1 + "c"; 通过StringBuilder(一个地址) 对象 连接通过toString()（又一个地址）
+
+        s3指向的是toString 的地址 ,s1,s2都是指向常量池的地址
+
+        第二个是true
+6.String判断功能（就是返回值boolean的方法）
+    * A:String类的判断功能
+    	* boolean equals(Object obj):比较字符串的内容是否相同,区分大小写
+    	* boolean equalsIgnoreCase(String str):比较字符串的内容是否相同,忽略大小写
+    	* boolean contains(String str):判断大字符串中是否包含小字符串
+    	* boolean startsWith(String str):判断字符串是否以某个指定的字符串开头
+    	* boolean endsWith(String str):判断字符串是否以某个指定的字符串结尾
+    	* boolean isEmpty():判断字符串是否为空。
+    	"heima" false
+    	""      true
+    	null    NullPointException
+7.模拟用户登陆（练习）
+    * A:案例演示
+    	* 需求：模拟登录,给三次机会,并提示还有几次。
+    	* 用户名和密码都是admin
+    解析：
+        Scanner 键盘录入
+        三次机会 for
+        判断if
+        推荐用"admin".equals();常量.equals 变量（有可能是null导致空指针异常）
+        登陆正确break跳出循环
+
+8.String类的获取功能
+    * A:String类的获取功能
+    	* int length():获取字符串的长度。
+    	//获取每一个字符的个数，中文英文，符号都是一个字符
+    	* char charAt(int index):获取指定索引位置的字符
+    	//0-(length-1) StringIndexOutOfBoundsException索引越界报异常
+    	* int indexOf(int ch):返回指定字符在此字符串中第一次出现处的索引。
+        //97 -> 'a' 参数接受的是int 类型的 传入char 会自动类型提升， 不存在会返回-1
+    	* int indexOf(String str):返回指定字符串在此字符串中第一次出现处的索引。
+    	//
+    	* int indexOf(int ch,int fromIndex):返回指定字符在此字符串中从指定位置后第一次出现处的索引。
+    	//指定位置之后第一次出现的索引值（和平常的索引是一样）
+    	* int indexOf(String str,int fromIndex):返回指定字符串在此字符串中从指定位置后第一次出现处的索引。
+    	* lastIndexOf
+    	//从后向前找（和平常的索引是一样）
+    	* String substring(int start):从指定位置开始截取字符串,默认到末尾。
+
+    	* String substring(int start,int end):从指定位置开始到指定位置结束截取字符串。
+    	包含头不包含尾
+9.字符串的遍历
+    for->s.length()       charAt()
+10.统计不同类型字符个数
+    获取每一个字符
+        判断在哪个区间内计数
+11.String类的转换功能
+    * A:String的转换功能：
+    	* byte[] getBytes():把字符串转换为字节数组。
+    	//和上午的97-》a 按照系统设置码表编译 gbk码表一般中文为负数 第一个字节肯定是负数 ，是由连个Byte组成的
+
+    	* char[] toCharArray():把字符串转换为字符数组。
+        遍历字符串方法二
+
+    	* static String valueOf(char[] chs):把字符数组转成字符串。
+    	多个重载，任意类型的转换为字符串（底层就是new String 封装起来了）
+
+    	* static String valueOf(int i):把int类型的数据转成字符串。
+        valueOf（Object）
+        默认调用对象的toString方法
+    		* 注意：String类的valueOf方法可以把任意类型的数据转成字符串
+
+    	* String toLowerCase():把字符串转成小写。(了解)
+    	转换为小写
+    	* String toUpperCase():把字符串转成大写。
+    	转换为小写
+    	* String concat(String str):把字符串拼接。
+        +好比较强大，可以拼接任意类型
+
+        分享-》copyOf ,valueOf底层同样是new String()
+12按照要求转换字符
+    把第一个首字母大写substring(0,1).toUpperCase，其余小写substring(1).toLowerCase()
+13.把数组转换为字符串
+    1.定义"["
+    2.遍历数组
+    3.if i ==arr.length -1 打印 "]" else ','
+14.String类的其他功能
+    * A:String的替换功能及案例演示
+    	* String replace(char old,char new)
+    	* String replace(String old,String new)
+    	//需要的参数CharSequence 也是一个多态的参数，有多个实现该接口的方法
+    * B:String的去除字符串两空格及案例演示
+    	* String trim()
+    * C:String的按字典顺序比较两个字符串及案例演示
+    	* int compareTo(String str)(暂时不用掌握)
+    	-1 0 1
+    	//长度相同一个一个比较，长度不同比较的是，长度 例如 "a".compareTo("aaaa") 结果为-3
+    	//按照码表值比较，中文比较是Unicode码表值  '黑'+0  '马'+0 -》1125
+    	//系统的操作的与（硬盘）系统的编码表有关系gbk
+    	//
+     	* int compareToIgnoreCase(String str)(了解)
+
+     	int n1 = s1.length();
+        int n2 = s2.length();
+        int min = Math.min(n1, n2);
+        for (int i = 0; i < min; i++) {
+            char c1 = s1.charAt(i);
+            char c2 = s2.charAt(i);
+            if (c1 != c2) {
+                c1 = Character.toUpperCase(c1);
+                c2 = Character.toUpperCase(c2);
+                if (c1 != c2) {
+                    c1 = Character.toLowerCase(c1);
+                    c2 = Character.toLowerCase(c2);
+                    if (c1 != c2) {
+                        // No overflow because of numeric promotion
+                        return c1 - c2;
+                    }
+                }
+            }
+        }
+        return n1 - n2;
+15.字符串反转
+    转化为数组
+    遍历倒着添加
+16.大串中查找小串
+    计数器，变量0
+    indexOf返回索引值，截取大串，知道-1才停止
+17.代码实现
+
+
