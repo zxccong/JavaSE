@@ -1,0 +1,222 @@
+1.正则表达式
+    概述
+        是指一个用来描述或者匹配一系列符合某个语法规则的字符串的单个字符串。其实就是一种规则。有自己特殊的应用。
+        作用:比如注册邮箱,邮箱有用户名和密码,一般会对其限制长度,这个限制长度的事情就是正则表达式做的
+    B:案例演示
+    	* 需求：校验qq号码.
+    		* 1:要求必须是5-15位数字
+    		* 2:0不能开头
+    		* 3:必须都是数字
+     boolean matches(String regex)
+              告知此字符串是否匹配给定的正则表达式
+2.字符类演示
+    java.util.regex
+    类 Pattern
+    指定为字符串的正则表达式必须首先被编译为此类的实例。然后，可将得到的模式用于创建 Matcher 对象，依照正则表达式，
+    该对象可以与任意字符序列匹配。执行匹配所涉及的所有状态都驻留在匹配器中，所以多个匹配器可以共享同一模式。
+    字符类
+    [abc] a、b 或 c（简单类）
+    [^abc] 任何字符，除了 a、b 或 c（否定）
+    [a-zA-Z] a 到 z 或 A 到 Z，两头的字母包括在内（范围）
+    [a-d[m-p]] a 到 d 或 m 到 p：[a-dm-p]（并集）
+    [a-z&&[def]] d、e 或 f（交集）
+    [a-z&&[^bc]] a 到 z，除了 b 和 c：[ad-z]（减去）
+    [a-z&&[^m-p]] a 到 z，而非 m 到 p：[a-lq-z]（减去）
+3.预定义字符类
+    预定义字符类
+    . 任何字符（与行结束符可能匹配也可能不匹配）
+    \d 数字：[0-9]
+    \D 非数字： [^0-9]
+    \s 空白字符：[ \t\n\x0B\f\r]（\x0B垂直换行符）
+    \S 非空白字符：[^\s]
+    \w 单词字符：[a-zA-Z_0-9]
+    \W 非单词字符：[^\w]
+4.数量词
+    Greedy 数量词
+    X? X，一次或一次也没有
+    X* X，零次或多次
+    X+ X，一次或多次
+    X{n} X，恰好 n 次
+    X{n,} X，至少 n 次
+    X{n,m} X，至少 n 次，但是不超过 m 次
+5.分割功能
+     String[] split(String regex)
+              根据给定正则表达式的匹配拆分此字符串。
+     String[] split(String regex, int limit)
+              根据匹配给定的正则表达式来拆分此字符串。
+6.字符串中数字排列
+    需求：我有如下一个字符串:”91 27 46 38 50”，请写代码实现最终输出结果是：”27 38 46 50 91”
+    1.将字符串转换为字符串数组
+    2.将字符串转换为数字，并存储在等长度的int数组中
+    3.排序Arrays.sort()
+    4.遍历结果拼接到字符串中-》StringBuffer()
+7.正则表达式替换
+    * A:正则表达式的替换功能
+    	* String类的功能：public String replaceAll(String regex,String replacement)
+    * B:案例演示
+    	* 正则表达式的替换功能
+8.正则表达式分组功能
+    * A:正则表达式的分组功能
+    	* 捕获组可以通过从左到右计算其开括号来编号。例如，在表达式 ((A)(B(C))) 中，存在四个这样的组：
+    *
+    		1     ((A)(B(C)))
+    		2     (A
+    		3     (B(C))
+    		4     (C)
+
+    		组零始终代表整个表达式。
+    * B:案例演示
+    	a:切割
+    		需求：请按照叠词切割： "sdqqfgkkkhjppppkl";
+    		"(.)\\1+"
+    	b:替换
+    		需求：我我....我...我.要...要要...要学....学学..学.编..编编.编.程.程.程..程
+    		将字符串还原成:“我要学编程”。
+    		replaceAll("\\.+","")
+    		replaceAll("(.)\\1+","$1")      //$1代表第一组中的内容
+
+    快快乐乐
+    (.)\\1(.)\\2          \\1代表第一组又出现了一次2代表，第二组又出现一次
+    快乐快乐
+    （..）\\1
+9.Pattern和Matcher的概述
+    指定为字符串的正则表达式必须首先被编译为此类的实例。然后，可将得到的模式用于创建 Matcher 对象，
+    依照正则表达式，该对象可以与任意字符序列匹配。执行匹配所涉及的所有状态都驻留在匹配器中，所以多个匹配器可以共享同一模式
+    因此，典型的调用顺序是
+
+    static Pattern compile(String regex)
+              将给定的正则表达式编译到模式中。
+    Matcher matcher(CharSequence input)
+              创建匹配给定输入与此模式的匹配器。
+    boolean matches()
+              尝试将整个区域与模式匹配。
+
+     Pattern p = Pattern.compile("a*b");
+     Matcher m = p.matcher("aaaaab");
+     boolean b = m.matches();
+
+    等效于
+        "aaaab".matches("a*b")
+10.正则中的获取功能
+    在字符串中获取手机号码
+    Pattern p = Pattern.compile("1[3578]\\d{9}");
+     Matcher m = p.matcher("我的手机号码15812345678");
+     boolean b = m.matches();
+
+     ->false
+
+    boolean find()
+              尝试查找与该模式匹配的输入序列的下一个子序列。
+    String group()
+              返回由以前匹配操作所匹配的输入子序列
+    String group(int group)
+              返回在以前匹配操作期间由给定组捕获的输入子序列
+
+    Pattern p = Pattern.compile("1[3578]\\d{9}");
+     Matcher m = p.matcher("我的手机号码15812345678");
+     boolean b = m.find();
+
+     while(m.find()){
+        sout (m.group())
+     }
+11.Math类
+    * A:Math类概述（java.lang包下不用导包）
+    	* Math 类包含用于执行基本数学运算的方法，如初等指数、对数、平方根和三角函数。
+    * B:成员方法
+    	* public static int abs(int a)  //绝对值
+    	* public static double ceil(double a)//向上取整ceil天花板的意思
+    	* public static double floor(double a)//向下取整
+    	* public static int max(int a,int b) min自学
+    	* public static double pow(double a,double b)   //a的b次方  前面的是底数，后面的是指数
+    	* public static double random()                 //生成0.0到1.0之间小数
+    	* public static int round(float a) 参数为double的自学//四写五入
+    	* public static double sqrt(double a)               //去根号
+12.Random
+    * A:Random类的概述
+    	* 此类用于产生随机数如果用相同的种子创建两个 Random 实例，
+    	* 则对每个实例进行相同的方法调用序列，它们将生成并返回相同的数字序列。
+    * B:构造方法
+    	* public Random()
+    	* public Random(long seed)
+    * C:成员方法
+    	* public int nextInt()
+    	* public int nextInt(int n)(重点掌握)
+
+    种子值没有定义的话，用的是时间的纳秒值
+    如果种子相同每次得到的相同
+    public Random() {
+        this(seedUniquifier() ^ System.nanoTime());
+    }
+
+     int nextInt(int n)
+    返回一个伪随机数，它是取自此随机数生成器序列的、在 0（包括）和指定值（不包括）之间均匀分布的 int 值。
+13.System类的概述和方法(在一个源文件不允许定义两个public修饰的类)
+    * A:System类的概述
+    	* System 类包含一些有用的类字段和方法。它不能被实例化。
+    * B:成员方法
+    	* public static void gc()（手动启动垃圾回收器）
+    	* public static void exit(int status)（退出）
+    	* public static long currentTimeMillis()(当前时间的毫秒值)
+    	* pubiic static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+    	（应用在ArryaList数组中不断创建1.5倍大小的数组拷贝内容）
+    * C:案例演示
+    	* System类的成员方法使用
+
+    static void gc()
+          运行垃圾回收器。
+    Object:
+    protected  void finalize()
+              当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。
+
+    static void exit(int status)
+              终止当前正在运行的 Java 虚拟机
+    终止当前正在运行的 Java 虚拟机。参数用作状态码；根据惯例，非 0 的状态码表示异常终止。
+    Api等效：Runtime.getRuntime().exit(n)
+14.BigInteger
+    * A:BigInteger的概述
+    	* 可以让超过Integer范围内的数据进行运算
+    * B:构造方法
+    	* public BigInteger(String val)
+    * C:成员方法
+    	* public BigInteger add(BigInteger val)(加)
+    	* public BigInteger subtract(BigInteger val)（减）
+    	* public BigInteger multiply(BigInteger val)（乘）
+    	* public BigInteger divide(BigInteger val)（除）
+    	* public BigInteger[] divideAndRemainder(BigInteger val)
+    	 BigInteger[] divideAndRemainder(BigInteger val)
+                  返回包含 (this / val) 后跟 (this % val) 的两个 BigInteger 的数组
+     Demo5_BigInteger
+
+15.BigDecimal
+    * A:BigDecimal的概述
+    	* 由于在运算的时候，float类型和double很容易丢失精度，演示案例。
+    	* 所以，为了能精确的表示、计算浮点数，Java提供了BigDecimal
+    	* 不可变的、任意精度的有符号十进制数。
+    * B:构造方法
+    	* public BigDecimal(String val)
+    * C:成员方法
+    	* public BigDecimal add(BigDecimal augend)
+    	* public BigDecimal subtract(BigDecimal subtrahend)
+    	* public BigDecimal multiply(BigDecimal multiplicand)
+    	* public BigDecimal divide(BigDecimal divisor)
+    * D:案例演示
+    	* BigDecimal类的构造方法和成员方法使用
+    Demo6_BigDecimal
+16.Date
+    * A:Date类的概述
+    	* 类 Date 表示特定的瞬间，精确到毫秒。
+    * B:构造方法
+    	* public Date()
+    	* public Date(long date)
+    * C:成员方法
+    	* public long getTime()
+    	* public void setTime(long time)
+17.SimpleDateFormat
+    * A:DateFormat类的概述
+    	* DateFormat 是日期/时间格式化子类的抽象类，它以与语言无关的方式格式化并解析日期或时间。是抽象类，所以使用其子类SimpleDateFormat
+    * B:SimpleDateFormat构造方法
+    	* public SimpleDateFormat()
+    	* public SimpleDateFormat(String pattern)
+    * C:成员方法
+    	* public final String format(Date date)
+    	* public Date parse(String source)

@@ -1,0 +1,277 @@
+1.StringBuffer
+    概述lang包下的所以不用导包
+        线程安全的可变字符序列类似于String的字符串缓冲区
+    区别
+        String是一个不可变的字符序列
+        StringBuffer是一个可变的字符序列
+2.构造方法
+    每个字符串缓冲区都有一定的容量。只要字符串缓冲区所包含的字符序列的长度没有超出此容量，就无需分配新的内部缓冲区数组。如果内部缓冲区溢出，则此容量自动增大。
+    从 JDK 5 开始，为该类补充了一个单个线程使用的等价类，即 StringBuilder。
+    与该类相比，通常应该优先使用 StringBuilder 类，因为它支持所有相同的操作，但由于它不执行同步，所以速度更快。
+    构造方法摘要
+    StringBuffer()
+              构造一个其中不带字符的字符串缓冲区，其初始容量为 16 个字符。
+    StringBuffer(CharSequence seq)
+              public java.lang.StringBuilder(CharSequence seq) 构造一个字符串缓冲区，它包含与指定的 CharSequence 相同的字符。
+    StringBuffer(int capacity)
+              构造一个不带字符，但具有指定初始容量的字符串缓冲区。
+    StringBuffer(String str)
+              构造一个字符串缓冲区，并将其内容初始化为指定的字符串内容。
+3.添加功能
+    append()
+        可以把任意类型数据添加到字符串缓冲区去，并返回缓冲区本身
+         StringBuffer append(boolean b)
+                  将 boolean 参数的字符串表示形式追加到序列。
+         StringBuffer append(char c)
+                  将 char 参数的字符串表示形式追加到此序列。
+         StringBuffer append(char[] str)
+                  将 char 数组参数的字符串表示形式追加到此序列。
+         StringBuffer append(char[] str, int offset, int len)
+                  将 char 数组参数的子数组的字符串表示形式追加到此序列。
+         StringBuffer append(CharSequence s)
+                  将指定的 CharSequence 追加到该序列。
+         StringBuffer append(CharSequence s, int start, int end)
+                  将指定 CharSequence 的子序列追加到此序列。
+         StringBuffer append(double d)
+                  将 double 参数的字符串表示形式追加到此序列。
+         StringBuffer append(float f)
+                  将 float 参数的字符串表示形式追加到此序列。
+         StringBuffer append(int i)
+                  将 int 参数的字符串表示形式追加到此序列。
+         StringBuffer append(long lng)
+                  将 long 参数的字符串表示形式追加到此序列。
+         StringBuffer append(Object obj)
+                  追加 Object 参数的字符串表示形式。
+         StringBuffer append(String str)
+                  将指定的字符串追加到此字符序列。
+         StringBuffer append(StringBuffer sb)
+                  将指定的 StringBuffer 追加到此序列中。
+    insert
+        在指定位置插入，如果没有该索引索引越界异常
+         StringBuffer insert(int offset, boolean b)
+                  将 boolean 参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int offset, char c)
+                  将 char 参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int offset, char[] str)
+                  将 char 数组参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int index, char[] str, int offset, int len)
+                  将数组参数 str 的子数组的字符串表示形式插入此序列中。
+         StringBuffer insert(int dstOffset, CharSequence s)
+                  将指定 CharSequence 插入此序列中。
+         StringBuffer insert(int dstOffset, CharSequence s, int start, int end)
+                  将指定 CharSequence 的子序列插入此序列中。
+         StringBuffer insert(int offset, double d)
+                  将 double 参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int offset, float f)
+                  将 float 参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int offset, int i)
+                  将 int 参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int offset, long l)
+                  将 long 参数的字符串表示形式插入此序列中。
+         StringBuffer insert(int offset, Object obj)
+                  将 Object 参数的字符串表示形式插入此字符序列中。
+         StringBuffer insert(int offset, String str)
+                  将字符串插入此字符序列中。
+
+
+    StringBuffer 是字符串缓存区，当new 的时候是在堆内存中创建一个对象 ，底层是一个长度为16的字符数组
+    调用添加方法时不会再重新创建对象，而是不断向原来缓冲区添加字符
+4.删除
+    deleteCharAt(int index):
+        deleteCharAt
+        public StringBuffer deleteCharAt(int index)移除此序列指定位置的 char。此序列将缩短一个 char。
+        注：如果给定索引处的字符是增补字符，则此方法将不会移除整个字符。如果需要准确处理增补字符
+        ，那么可以通过调用 Character.charCount(thisSequence.codePointAt(index))（用此序列取代 thisSequence）
+        来确定要移除的 char 的数量。
+
+    delete(int start,int end)(包含头不包含尾0，sb.length（）清空)
+        移除此序列的子字符串中的字符。该子字符串从指定的 start 处开始，
+        一直到索引 end - 1 处的字符，如果不存在这种字符，
+        则一直到序列尾部。如果 start 等于 end，则不发生任何更改。
+    不要用 new StringBuffer()清空，之前的会变成垃圾
+5.替换反转
+    替换
+        public StringBuffer replace(int start,int end,String str)
+            使用给定 String 中的字符替换此序列的子字符串中的字符。该子字符串从指定的 start 处开始，
+            一直到索引 end - 1 处的字符，如果不存在这种字符，
+            则一直到序列尾部。先将子字符串中的字符移除，
+            然后将指定的 String 插入 start。（如果需要，序列将延长以适应指定的字符串。）
+    反转
+        public StringBuffer reverse()
+            将此字符序列用其反转形式取代。如果序列中存在代理项对 (surrogate pair)，在 reverse 操作中将其作为单个字符处理。
+            因此，高-低代理项的顺序不会反转。假设 n 为执行 reverse 方法前此字符序列的字符长度（并非 char 值的长度），
+            则新字符序列中索引 k 处的字符将等于原字符序列索引 n-k-1 处的字符。
+            注意，进行 reverse 操作后，执行操作前未成对的低代理项和高代理项将成为代理项对。
+            例如，反转 "\uDC00\uD800" 将生成有效的代理项对 "\uD800\uDC00"。
+6.截取
+    public String substring(int start)
+        返回一个新的 String，它包含此字符序列当前所包含的字符子序列。
+        该子字符串始于指定索引处的字符，一直到此字符串末尾。
+    public String substring(int start,int end)（包含头不包含尾，返回值是String不再是StringBuffer对象）
+        返回一个新的 String，它包含此序列当前所包含的字符子序列。
+        该子字符串从指定的 start 处开始，一直到索引 end - 1 处的字符。
+    public CharSequence subSequence(int start,int end)
+        返回一个新的字符序列，该字符序列是此序列的子序列。
+7.相互转换
+    String - StringBuffer
+        通过构造方法
+        通过append()方法
+    StringBuffer ---String
+        通过构造方法
+        通过toString()方法
+        通过subString(0,length)方法
+8.把数组转换为字符串
+    把数组转换为"[1,2,3]"
+    抽成一个方法
+        arrayToString转换为字符串
+        （同day12->13）
+    1.定义"["
+    2.遍历数组
+    3.if i ==arr.length -1 打印 "]" else ','
+
+    不会产生垃圾String
+
+9.字符串反转(day12->15)
+    转化为数组 toCharArray
+    遍历倒着添加
+    sb.reverse()
+        public StringBuffer reverse()
+            将此字符序列用其反转形式取代。如果序列中存在代理项对 (surrogate pair)，在 reverse 操作中将其作为单个字符处理。
+            因此，高-低代理项的顺序不会反转。假设 n 为执行 reverse 方法前此字符序列的字符长度（并非 char 值的长度），
+            则新字符序列中索引 k 处的字符将等于原字符序列索引 n-k-1 处的字符。
+10.StringBuffer和StringBuilder区别
+    StringBuffer 是jdk 1.0版本的，是线程安全的，效率低
+    StringBuilder是jdk1.5版本的，是线程不安全的，效率高
+
+    String 和StringBuffer,StringBuilder区别
+    String是一个可变的字符序列
+    StringBuffer,StrngBuilder是可变的字符序列
+11.String 和 StringBuffer分别作为参数传递
+        基本数据类型的值传递，不改变其值
+        引用数据类型的值传递传地址，改变其值
+    String虽然是引用数据类型，但是当他作为参数传递时和基本数据类型是一样的（定义之后就不变）
+        Demo1_StringBuffer
+12冒泡排序
+    轻的上浮，沉的下沉
+    两个相邻的位置比较如果，前面元素比后面的元素大就交换位置
+13选择排序
+    用一个索引位置上的元素，依次与其他位置上的元素比较
+    小的在前面大的在后面
+14.折半查找
+    Demo2_Array
+15.Arrays
+    API
+        此类包含用来操作数组（比如排序和搜索）的各种方法。此类还包含一个允许将数组作为列表来查看的静态工厂。
+    概述
+        针对数组进行操作的工具类
+        提供了排序，查找等方法
+    成员方法
+        toString()//转字符串
+            if (a == null)
+                        return "null";
+                    int iMax = a.length - 1;
+                    if (iMax == -1)
+                        return "[]";
+
+                    StringBuilder b = new StringBuilder();
+                    b.append('[');
+                    for (int i = 0; ; i++) {
+                        b.append(a[i]);
+                        if (i == iMax)
+                            return b.append(']').toString();
+                        b.append(", ");
+                    }
+        sort()//排序
+        binarySearch()//二分查找
+        int low = fromIndex;
+                int high = toIndex - 1;
+
+                while (low <= high) {
+                    int mid = (low + high) >>> 1;
+                    int midVal = a[mid];
+
+                    if (midVal < key)
+                        low = mid + 1;
+                    else if (midVal > key)
+                        high = mid - 1;
+                    else
+                        return mid; // key found
+                }
+                return -(low + 1);  // key not found.
+            如果范围包含多个带有指定值的元素，则无法保证找到的是哪一个。
+            如果它包含在数组的指定范围内，则返回搜索键的索引；否则返回 (-(插入点) - 1)。
+
+        toString()
+            toString(boolean[] a)
+                      返回指定数组内容的字符串表示形式。
+            static String toString(byte[] a)
+                      返回指定数组内容的字符串表示形式。
+        sort()
+            static void sort(byte[] a)
+                      对指定的 byte 型数组按数字升序进行排序。
+            static void sort(int[] a, int fromIndex, int toIndex)
+                      对指定 int 型数组的指定范围按数字升序进行排序。
+            static void sort(long[] a)
+                      对指定的 long 型数组按数字升序进行排序。
+        binarySearch()
+            static int binarySearch(byte[] a, byte key)
+                      使用二分搜索法来搜索指定的 byte 型数组，以获得指定的值。
+            static int binarySearch(byte[] a, int fromIndex, int toIndex, byte key)
+                      使用二分搜索法来搜索指定的 byte 型数组的范围，以获得指定的值。
+13.基本类型包装类
+    为什么会有
+        将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据
+    常用操作
+        用于基本数据类型与字符串之间转换
+    对应
+        byte Byte
+        short Short
+        int Integer
+        long Long
+        float Float
+        char Character
+        boolean Boolean
+14.Integer类的概述
+    好处举例
+        toBinaryString转换进制2进制
+        toHexString()转换进制16进制
+        toOctalString()转换8进制
+15.概述
+    构造方法摘要
+    Integer(int value)
+              构造一个新分配的 Integer 对象，它表示指定的 int 值。
+    Integer(String s)（NumberFormatException）
+              构造一个新分配的 Integer 对象，它表示 String 参数所指示的 int 值。
+    最大值，最小值常量
+16.String和int 相互转换
+    int--String
+        与""拼接
+        valueOf
+        Integer--String
+        Integer静态方法toString()
+    String - - int
+        String -- Integer --int
+        parseInt(String s)
+     总结 基本数据类型包装类有8种，7种都又parseXxx的类型转换方法   Char类中没有
+17自动装箱和拆箱
+    自动装箱：把基本类型转换为包装类型
+    自动拆箱：把包装类型转换为基本类型
+
+            Integer o2 = 100;           //自动装箱
+
+            int z = o2 + 200;           //自动拆箱  如果o2
+
+    Integer ii = 100;
+    ii +=200;
+    Integer x = null; ,就会出现NullPointerException
+    建议先判断null再使用
+18.面试题
+    -128到127是byte 取值范围，如果在这个范围内，自动装箱就不会新创建对象
+    而是从常量池中获取，如果超过了取值范围就会新创建对象
+
+    public static Integer valueOf(int i) {
+            assert IntegerCache.high >= 127;
+            if (i >= IntegerCache.low && i <= IntegerCache.high)
+                return IntegerCache.cache[i + (-IntegerCache.low)];
+            return new Integer(i);
+        }
