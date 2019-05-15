@@ -221,4 +221,23 @@
     	* public final String format(Date date)
     	* public Date parse(String source)
     yyyy:MM:dd:HH:mm:ss"    //2019:05:10:08:16:57*/
-18.
+    练习：生日字符串，转换为Date对象（通过parse方法），获得毫秒值，通过当前时间毫秒值计算出来到世界多小天
+18.Calendar类
+    Calendar类的概述
+        Calendar类是一个抽象类，它为特定瞬间诸如Year,Month,Day_Of_Month,Hour
+        等日期之间的转换
+    成员方法
+        public static Calendar getInstance();
+        public int get(int field)
+    Demo9_Calendar
+19.常见对象(Calendar类的add()和set()方法)(掌握)
+   * A:成员方法
+   	* public void add(int field,int amount)
+   	* public final void set(int year,int month,int date)
+   * B:案例演示
+   	* Calendar类的成员方法使用
+20.判断是否为闰年
+    使用Calendar通过设置为3月1号，减去1天，如果是29日就是闰年，28日就是平年
+    c.set(Year,2,1)
+    c.add(Calendar.Day_Of_Month,-1)
+    c.get(Calender.Day_OF_Month)==29
