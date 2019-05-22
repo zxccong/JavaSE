@@ -73,7 +73,17 @@ public class Demo1_Collection {
         strings.isEmpty();           //是否为空
         strings.size();             //大小
 
+        Collection coll = new ArrayList();
+        coll.add(new Demo_Student("张三",23));		//Object obj = new Demo_Student("张三",23);
+        coll.add(new Demo_Student("李四",24));
+        coll.add(new Demo_Student("王五",25));
+        coll.add(new Demo_Student("赵六",26));
 
+        Object[] arr = coll.toArray();				//将集合转换成数组
+        for (int i = 0; i < arr.length; i++) {
+            Demo_Student s = (Demo_Student)arr[i];			//强转成Student
+            System.out.println(s.getName() + "," + s.getAge());
+        }
 
     }
 }

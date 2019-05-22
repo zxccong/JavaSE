@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b6f4a61-b6e7-4ded-810f-847c0a2520f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Base_Class3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day14/Demo9_Calendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day15/Demo1_Collection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/day15/day15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day15/Demo2_Iterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day15/Demo3_List.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day15/Demo4_ConCurrence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/day1/BaseClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/day1/BaseClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/day1/day4/Demo1_Mark.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/day1/day4/Demo1_Mark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day14/day14.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/day14/day14.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day15/Demo1_Collection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day15/Demo1_Collection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day15/day15.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/day15/day15.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,40 +34,42 @@
     <session id="585337707">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.64" value="1" />
+          <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.70" value="1" />
           <entry key="project.open.time.80" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.81" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="26" />
+          <entry key="java" value="33" />
           <entry key="log" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="26" />
+          <entry key="JAVA" value="33" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="2" />
-          <entry key="java" value="2590" />
-          <entry key="log" value="901" />
-          <entry key="txt" value="14" />
+          <entry key="java" value="3175" />
+          <entry key="log" value="1079" />
+          <entry key="txt" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2590" />
-          <entry key="PLAIN_TEXT" value="917" />
+          <entry key="JAVA" value="3175" />
+          <entry key="PLAIN_TEXT" value="1110" />
         </counts>
       </usages-collector>
     </session>
@@ -79,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/day14/day14.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="4598">
               <caret line="242" column="36" selection-start-line="242" selection-start-column="36" selection-end-line="242" selection-end-column="36" />
             </state>
           </provider>
@@ -88,20 +88,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/day15/day15.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="49" selection-end-column="39" />
+            <state relative-caret-position="150">
+              <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="186" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/day15/Demo1_Collection.java">
+        <entry file="file://$PROJECT_DIR$/src/day15/Demo4_ConCurrence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+            <state relative-caret-position="401">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#155#212#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/day15/Demo3_List.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/day15/Demo2_Iterator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/day15/Demo1_Collection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,6 +150,14 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Student</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Demo_Student</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -151,8 +194,11 @@
         <option value="$PROJECT_DIR$/src/Base_Class3.java" />
         <option value="$PROJECT_DIR$/src/day14/Demo9_Calendar.java" />
         <option value="$PROJECT_DIR$/src/day14/day14.log" />
-        <option value="$PROJECT_DIR$/src/day15/day15.log" />
         <option value="$PROJECT_DIR$/src/day15/Demo1_Collection.java" />
+        <option value="$PROJECT_DIR$/src/day15/Demo2_Iterator.java" />
+        <option value="$PROJECT_DIR$/src/day15/Demo3_List.java" />
+        <option value="$PROJECT_DIR$/src/day15/day15.log" />
+        <option value="$PROJECT_DIR$/src/day15/Demo4_ConCurrence.java" />
       </list>
     </option>
   </component>
@@ -173,7 +219,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,14 +242,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://F:/JavaSe/day1/src/day02/DataType.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557928396916" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558448003927" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -217,190 +263,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\JavaSe\day1\src\day05" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/BaseClass.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/Main.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/DataType.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/DataType2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/DataTypeConversion.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/Demo1_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/Demo2_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/Test1_DataTypeConversion.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/Test1_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/Test2_DataTypeConversion.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day02/Test3_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo10_switch.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo1_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo2_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo3_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo4_operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo5_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo6_Operator.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo7_Scanner.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo8_Sequence.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Demo9_if.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Test1_Scanner.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day03/Test2_SwitchIf.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day4/Demo1_For.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day4/Demo1_ForFor.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day4/Demo1_Mark.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day4/Demo1_While.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day4/Test1_For.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/day1/day4/day04.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/BaseClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day07/Demo_Student.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day07/day07.log</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day07/ArrayTool.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day07/MathTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day08/Demo1_Code.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day08/Demo1_Extend.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day08/Demo2_Extends.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day08/Demo3_Overide.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day08/Test_Extends.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day08/day08.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day09/Demo1_Interface.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day09/Demo2_Abstract.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day09/Demo_Abstract.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day09/Demo_Polymorphic.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day09/Test_Polymorphic.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day09/day09.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/Demo1_InnerClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/Demo1_NoNameInnerClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/Demo2_InnerClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/Test1_InnerClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/Test1_NoNameInnerClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/Test2_NoNameInnerClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day10/day10.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day11/Demo1_HashCode.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day11/Demo2_GetClass.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day11/Demo3_ToString.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day11/Demo4_equals.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day11/day11.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day12/Demo_Scanner.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day12/Demo_String.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day12/Test_String.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day12/day12.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day13/Demo1_StringBuffer.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day13/Demo2_Array.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day13/Demo2_Interger.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day13/day13.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo1_Math.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo1_Regex.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo3_Random.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo4_System.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo5_BigInteger.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo6_BigDecimal.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo7_Date.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/Demo8_SimpleDateFormat.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/day14/day14.log</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -510,7 +372,9 @@
       <workItem from="1556416596774" duration="26729000" />
       <workItem from="1556627856661" duration="5921000" />
       <workItem from="1556884297152" duration="311000" />
-      <workItem from="1557923333136" duration="4815000" />
+      <workItem from="1557923333136" duration="5066000" />
+      <workItem from="1558009933000" duration="2141000" />
+      <workItem from="1558442651810" duration="3703000" />
     </task>
     <task id="LOCAL-00001" summary="完成day04">
       <created>1556637286167</created>
@@ -519,18 +383,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556637286167</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="day15,30分钟">
+      <created>1557928430814</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557928430814</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40042000" />
+    <option name="totallyTimeSpent" value="46137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="715" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.36793894" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5012407" side_tool="true" visible="true" weight="0.36793894" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49584025" visible="true" weight="0.31450382" />
+      <window_info id="Structure" order="1" sideWeight="0.50332224" side_tool="true" weight="0.31450382" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -538,7 +409,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3294509" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3294509" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -568,7 +439,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成day04" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成day04" />
+    <MESSAGE value="day15,30分钟" />
+    <option name="LAST_COMMIT_MESSAGE" value="day15,30分钟" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -768,20 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day14/day14.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="242" column="36" selection-start-line="242" selection-start-column="36" selection-end-line="242" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/day15/day15.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="49" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -800,20 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/util/AbstractList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="70" column="47" lean-forward="true" selection-start-line="70" selection-start-column="47" selection-end-line="70" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/util/AbstractCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="465" column="9" lean-forward="true" selection-start-line="465" selection-start-column="9" selection-end-line="465" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -825,13 +669,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/day15/Demo1_Collection.java">
+    <entry file="file://$PROJECT_DIR$/src/day14/day14.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+        <state relative-caret-position="4598">
+          <caret line="242" column="36" selection-start-line="242" selection-start-column="36" selection-end-line="242" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/util/AbstractCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="74" column="7" lean-forward="true" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-331">
+          <caret line="350" column="32" lean-forward="true" selection-start-line="350" selection-start-column="29" selection-end-line="350" selection-end-column="33" />
+          <folding>
+            <element signature="e#9661#9662#0" expanded="true" />
+            <element signature="e#9693#9694#0" expanded="true" />
+            <element signature="e#11802#11803#0" expanded="true" />
+            <element signature="e#11849#11850#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Program Files (x86)/Java/jdk1.8.0_73/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day15/Demo2_Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#155#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day15/Demo3_List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day15/day15.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="179" column="16" selection-start-line="179" selection-start-column="16" selection-end-line="186" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day15/Demo1_Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="79" column="42" selection-start-line="79" selection-start-column="42" selection-end-line="79" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/day15/Demo4_ConCurrence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
