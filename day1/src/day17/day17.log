@@ -1,0 +1,17 @@
+1.Set概述
+   Set和Collection 方法一样，没有特殊的方法
+   Demo1_HashSet
+2.存储自定义类
+    实现唯一性
+    重写hashCode方法和equals方法
+
+    public native int hashCode();
+
+    Demo1_HashSet
+
+
+3.原理图解和实战
+    Demo1_HashSet
+4.LinkedHashSet
+    特点
+        保证怎么存怎么取
