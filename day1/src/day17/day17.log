@@ -13,5 +13,56 @@
 3.原理图解和实战
     Demo1_HashSet
 4.LinkedHashSet
+    除了构造方法都是从父类继承的方法
     特点
         保证怎么存怎么取
+5.练习
+    1.产生10个1-20之间的随机数，要求随机数不能重复
+        判断set大小,不断生成随机数add
+    2.去除重复字符打印不同的字符 ，aaaabbbbcccddd
+        字符串CharAt()不断的add,有序要用LinkedHashSet
+    3.将集合中的重复元素除掉
+        addAll(list),添加到Set里面再addAll进去
+        0
+6.TreeSet
+    Demo3_TreeSet
+    TreeSet集合是用来对象进行排序的
+    同样可以保证元素的唯一
+    需要有Commparable接口
+    compareTo对比return 0
+    只存一个实体类
+    返回整数就怎么存怎么取
+    返回的是负数，怎么存倒叙取
+    0相同
+    1大于
+    -1小于
+    先比较年龄后比较姓名（String自己有实现按照字符序的比较方法）
+    int num = this.age -o.age;
+    return num == 0 ? this.name.compareTo(o.name):num
+
+    按照姓名再按照年龄
+    int num = this.name.compareTo(o.name)
+    return num == 0 ? this.age-o.age:num;
+
+    按照姓名长度，姓名，年龄
+    int length = this.name-legth()-o.name.legth()
+    int num = length == 0 ? this.name.compareTo(o.name)?length
+    return num == 0 ?
+
+    比较器排序
+        创建TreeSet的时候可以传入一个Comparable接口的实现类作为参数
+        谁调用，谁就是s1,集合中的元素就是s2
+    1.自然顺序（实体类实现Comparable）
+    2.比较顺序(构造的时候传入Comparable)
+    练习
+        1.在一个集合中存储重复的字符串，定义一个方法，让
+        其有序（字符序），且不能去除重复
+            建一个TreeSet，Comparable对象，if num ==0 ？1： s1.comparad(s2)
+            从而返回0不让他返回，返回1
+        2.练习二，输入helloitcast 打印acehillostt
+            同第一题道理
+        3.输入多个整数，知道输入quit将输入的整数倒叙输出打印
+           compara(),如果等于0 返回1，防止添加不进去
+        4.键盘录入学生信息，总分排序后输出控制太
+            定义学生类，继承Comparable接口，用总分进行Comparabale
+            传入TreeSet中去比较
