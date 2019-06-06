@@ -36,8 +36,9 @@ public class Demo1_FileInputStream {
             e.printStackTrace();
         }finally {
             try {
-                fileInputStream.close();
-
+                if (fileInputStream!=null){
+                    fileInputStream.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
