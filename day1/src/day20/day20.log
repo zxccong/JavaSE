@@ -152,7 +152,7 @@
    	* 字节流在读中文的时候有可能会读到(半个中文！！！),造成乱码
    * 字节流写出中文的问题
    	* 字节流直接操作的字节,所以写出中文必须将字符串转换成字节数组
-   	* 写出回车换行 write("\r\n".getBytes());
+   	* 写出回车换行 write("\r\n".getBytes());(字节流写中文，防止出现乱码)
 14.IO流(流的标准处理异常代码1.6版本及其以前)
    * try finally嵌套
 
@@ -169,11 +169,72 @@
    			try {
    				if(fis != null)
    					fis.close();
-   			}finally {
+   			}finally {（！！！）
    				if(fos != null)
    					fos.close();
    			}
    		}
-15.
+15.IO流(流的标准处理异常代码1.7版本)
+   * try close
+
+   		try(
+   			FileInputStream fis = new FileInputStream("aaa.txt");
+   			FileOutputStream fos = new FileOutputStream("bbb.txt");
+   			MyClose mc = new MyClose();
+   		){
+   			int b;
+   			while((b = fis.read()) != -1) {
+   				fos.write(b);
+   			}
+   		}
+   * 原理
+   	* 在try()中创建的流对象必须实现了AutoCloseable这个接口,（！！！）
+   	如果实现了,在try后面的{}(读写代码)执行后就会自动调用,流对象的close方法将流关掉
+16.IO流(图片加密)
+   * 给图片加密
+
+   		BufferedInputStream bis = new BufferedInputStream(new FileInputStream("a.jpg"));
+   		BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("b.jpg"));
+
+   		int b;
+   		while((b = bis.read()) != -1) {
+   			bos.write(b ^ 123);
+   		}
+
+   		bis.close();
+   		bos.close();
+17.IO流(拷贝文件)
+   * 在控制台录入文件的路径,将文件拷贝到当前项目下
+
+   		Scanner sc = new Scanner(System.in);
+   		System.out.println("请输入一个文件路径");
+   		String line = sc.nextLine();				//将键盘录入的文件路径存储在line中
+   		File file = new File(line);					//封装成File对象
+   		FileInputStream fis = new FileInputStream(file);
+   		FileOutputStream fos = new FileOutputStream(file.getName());
+
+   		int len;
+   		byte[] arr = new byte[8192];				//定义缓冲区
+   		while((len = fis.read(arr)) != -1) {
+   			fos.write(arr,0,len);
+   		}
+
+   		fis.close();
+   		fos.close();
+18.IO流(录入数据拷贝到文件)
+   * 将键盘录入的数据拷贝到当前项目下的text.txt文件中,键盘录入数据当遇到quit时就退出
+
+   		Scanner sc = new Scanner(System.in);
+   		FileOutputStream fos = new FileOutputStream("text.txt");
+   		System.out.println("请输入:");
+   		while(true) {
+   			String line = sc.nextLine();
+   			if("quit".equals(line))
+   				break;
+   			fos.write(line.getBytes());
+   			fos.write("\r\n".getBytes());
+   		}
+
+   		fos.close();
 
 
