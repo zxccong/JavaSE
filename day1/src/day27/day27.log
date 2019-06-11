@@ -1,0 +1,51 @@
+1.类的加载时机
+    当程序要使用某个类，如果该类还没被加载到内存中，
+    则系统会通过在加载，连接，初始化三部来实现对这个类的初始化
+    加载
+        将class读入内存中
+    连接
+        验证：是否有正确的内部结构，并和其他类协调一致
+        准备：负责类的静态成员分配内存，并设置默认初始化值
+        解析：将类的二进制数据中的符号引用转换为直接引用
+    初始化
+    加载时机
+        创建类的实例
+        访问类的静态方法，为静态方法赋值
+        调用类的静态方法
+        使用反射来强制创建某个类对应的java.lang.Class对象
+        初始化某个类的子类
+        直接使用java.exe命令来运行某个主类
+
+2.反射
+    加载器概述
+        负责将.class文件加载到内存中，并为之生成对应的class对象，虽然我们不需要关心加载机制，但是了解这个机制我们能更好的理解程序运行
+    加载器分类
+        Bootstrap ClassLoader 根类加载器
+        Extension ClassLoader 拓展加载器
+        System ClassLoader 系统加载器
+    加载器的作用
+        Bootstrap ClassLoader
+            也被称为引导类加载器，负责Java核心类的加载
+            比如System，String等，在JDK的lib目录下的rt.jar文件中
+        Extension
+            负责JRE的扩展目录中的jar包的加载
+            在JDK中JRE的libz目录下ext目录
+        System
+            负责JVM启动加载来自java 命令的class文件，以及classpath环境指定的jar包和路径
+3.反射概述
+    JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法
+    对于任意一个对象，都能够调用他的任意一个方法和属性
+    这种动态获取信息以及动态调用对象的方法功能称为反射机制
+    想解剖一个类必须要先获取该类的字节码对象
+    而解剖使用的就是Class类中的方法，所以要先获取到每一个字节码对象对应的Class类型的对象
+    方式,三个阶段
+        java:Objectl类的getClass（）方法，判断两个对象是否是同一个字节码对象
+        class:静态属性Class,锁对象
+        new Person:Class静态方法forName(),读取配置文件
+    Class clazz = class.forName("类名") 读取配置文件
+    Class clazz = Peason.class          当作静态方法的锁对象
+    Class clazz = p.getClass()          判读是否是同一个字节码对象
+4.
+
+
+
