@@ -1,9 +1,6 @@
 package day26;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
+import java.io.*;
 import java.net.Socket;
 
 /**
@@ -15,17 +12,21 @@ import java.net.Socket;
  *  * 	* 输入流可以读取服务端输出流写出的数据
  *  * 	* 输出流可以写出数据到服务端的输入流
  */
-public class Demo6_TCP_Client {
+public class Demo8_TCP_Client {
     public static void main(String[] args) throws IOException {
 
         Socket socket = new Socket("127.0.0.1",12345);
         //获取客户端的输入流
         InputStream is = socket.getInputStream();
         OutputStream os = socket.getOutputStream();
-        byte[]  arr= new byte[1024];
-        int len = is.read(arr);
-        System.out.println(new String(arr,0,len));
-        os.write("返回给服务器的数据".getBytes());
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        //之所以不用BufferedWrite是避免每次都写换行
+        PrintStream ps = new PrintStream(os);
+
+        System.out.println(br.readLine());
+        ps.println("我想报名就业班");
+        System.out.println(br.readLine());
+        ps.println("爷不学了");
         socket.close();
     }
 }

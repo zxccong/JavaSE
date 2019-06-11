@@ -17,7 +17,7 @@ import java.net.Socket;
  * 	* 输出流可以写出数据到客户端的输入流
  *
  */
-public class Demo5_TCP_Server {
+public class Demo7_TCP_Server {
     public static void main(String[] args) throws Exception {
         //
         ServerSocket server = new ServerSocket(12345);
@@ -27,11 +27,15 @@ public class Demo5_TCP_Server {
         InputStream is = socket.getInputStream();
         OutputStream os = socket.getOutputStream();
 
-        os.write("你好".getBytes());
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        //之所以不用BufferedWrite是避免每次都写换行
+        PrintStream ps = new PrintStream(os);
 
-        byte[]  arr= new byte[1024];
-        int len = is.read(arr);
-        System.out.println(new String(arr,0,len));
+        ps.println("欢迎咨询传智播客");//一定要换行，readLine是以换行，为结束标记的
+        System.out.println(br.readLine());
+        ps.println("报满了,请报下一期吧");
+        System.out.println(br.readLine());
+        server.close();
         socket.close();
 
     }
